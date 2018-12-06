@@ -1,0 +1,36 @@
+@import '../../style/variables';
+@import '../../style/grid';
+
+
+.Contact {
+    @extend .contentCol;
+    position: relative;
+
+    h1 {
+        margin: 0 0 .75em;
+    }
+    &:before {
+        content: "";
+        background: #252525;
+        height: 1px;
+        width: 200%;
+        position: absolute;
+        top: 30px;
+        left: 350px
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 2em;
+        position: relative;
+    }
+    @media (min-width:768px) { 
+        left: 0;
+        margin-top: 0;
+
+        h1 {
+            font-size: 52px;
+        }
+
+    }
+}

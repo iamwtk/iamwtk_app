@@ -1,0 +1,19 @@
+@import '../../style/variables';
+
+.Title {
+    font-family: $monoton,
+    cursive;
+    color: $blue;
+    font-weight: 400;
+    display: inline-block;
+    font-size: 2.5em;
+    letter-spacing: 1.7px;
+    margin: 0;
+
+    @media screen and (min-width: 530px) {
+        :global(.breakline) {
+            display: none;
+        }
+    }
+
+}

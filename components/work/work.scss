@@ -1,0 +1,28 @@
+@import '../../style/variables';
+@import '../../style/grid';
+
+.Work {
+    @extend .contentCol; 
+    position: relative;   
+
+    h1 {
+        margin: 0 0 .75em;
+    }
+
+    &:before {
+        content: "";
+        background: #252525;
+        height: 1px;
+        width: 200%;
+        position: absolute;
+        top: 23px;
+        left: 190px
+    }
+    .works {
+        width: calc(100% + 2em);
+        left: -1em;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;        
+    }
+}

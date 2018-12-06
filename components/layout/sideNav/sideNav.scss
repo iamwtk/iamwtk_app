@@ -1,0 +1,12 @@
+.SideNav {
+    display: none;
+    position: fixed;
+    right: 1em;
+    bottom: 22px;   
+    z-index: 50;
+
+    @media (min-width: 768px) {
+        display: block;
+        right: 50px;
+    }
+}

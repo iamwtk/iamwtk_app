@@ -1,0 +1,100 @@
+@import '../../style/grid';
+@import '../../style/variables';
+
+.Home {
+    @extend .contentCol;
+    position: relative;
+
+    h1 {
+        font-size: 5.125em;
+        letter-spacing: 2px;
+        line-height: 0.9;
+    }
+
+    .link {
+        font-style: italic;
+        font-size: 1.25em;
+        font-weight: 400;
+        color: $white;
+        display: inline-block;
+        position: relative;
+        padding: 0 5px;
+        transition-duration: 0.5s;
+        text-decoration: none;
+        font-family: $montserrat;
+
+
+        &:after,
+        &:before {
+            content: "";
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translateX(-50%);
+            transition-duration: 0.5s;
+            background: $blue;
+        }
+
+        &:after {
+            width: 0;
+            background: $dark;
+        } 
+
+        &:hover:before {
+            width: 0;
+        }
+
+
+        &:hover:after {
+            width: 100%;
+            background: $blue;
+        }
+
+    }
+
+
+    &:before {
+        content: "";
+        background: $dark;
+        height: 1px;
+        width: 200%;
+        position: absolute;
+        top: 72px;
+        left: 275px;
+    }
+
+    @media (min-width: 530px) {
+        h1 {
+            line-height: inherit;
+        }
+
+        &:before {
+            top: 112px;
+            left: 194px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        &:before {
+            animation: line 1s ease-in-out;
+        }
+    }
+}
+
+@keyframes line {
+    0% {
+        left: -100%;
+        width: 100%;
+    }
+
+    50% {
+        width: 10%;
+        left: 225px;
+    }
+
+    to {
+        width: 200%;
+    }
+}

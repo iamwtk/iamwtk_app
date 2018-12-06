@@ -1,0 +1,80 @@
+@import '../../../style/variables';
+
+.TypeWriter {
+    font-size: 2.3em;
+    position: relative;
+    margin-top: -113px;
+    left: 4px;
+    letter-spacing: 1.3px;
+    margin-bottom: 40px;
+    font-family: $montserrat;
+    font-weight: 700;
+    min-height: 147px;
+
+    span {
+        display: block;
+
+        &:nth-child(2) {
+            margin-top: 30px;
+        }
+
+        &:nth-child(3) {
+            margin-top: -10px;
+        }
+
+        &.cursor {
+            height: 32px;
+            width: 2px;
+            display: none;
+            background: $dark;
+            position: relative;
+            top: 4px;
+            animation: pulse 1s step-end infinite;            
+        }
+
+    }
+
+    .typeCursor {
+        display: none;
+        color: $dark;
+    }
+
+    @media screen and (min-width: 530px) {
+        margin-top: -50px;
+        min-height: 43px;
+
+        span {
+            display: inline;          
+
+            &.cursor {
+                display: inline-block;
+            }
+        }
+        .typeCursor {
+            display: inline;
+        }
+    }
+
+    
+
+}
+
+@keyframes pulse {
+    0%,
+    to {
+        background:$dark;
+    }
+
+    50% {
+        background: transparent;
+    }
+}
+
+
+    
+
+
+
+ 
+    
+

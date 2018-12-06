@@ -1,0 +1,33 @@
+@import '../../style/variables';
+@import '../../style/grid';
+@import '../../style/normalize';
+
+body {
+    background: $black;
+    color: $white;
+    overflow-x:hidden;
+    
+}
+
+* {
+    box-sizing: border-box;   
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.Layout {          
+    .content {
+        @extend .container;
+        min-height: 100vh;
+        padding-top: 5em;
+        padding-bottom: 5em;
+        display:flex;
+        align-items: center;
+        justify-content: center;        
+    }
+}
+
+      

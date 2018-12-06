@@ -1,0 +1,120 @@
+@import '../../../style/variables';
+
+.ContactForm {
+    position: relative;
+    flex-grow:3;
+
+    form {
+        width: 100%;
+        position: relative;
+
+        .submitError, .submitSuccess {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            left: 0;
+            top: -45px;            
+            font-family: $montserrat;
+            font-style: italic;
+            color: $error;
+            max-width: 370px;
+        }
+        .submitSuccess {
+            color: $success;
+        }
+
+        .formGroup {
+            position: relative;
+            max-width: 370px;
+            input,
+            textarea {
+                display: block;
+                width: 100%;               
+                border: 1px solid $dark;
+                background: none;
+                font-size: 1em;
+                padding: .75em;
+                font-family: $montserrat;
+                color: $white;
+                font-style: italic;
+                margin-bottom: 30px;
+
+                &::placeholder {
+                    color: #fff;
+                    font-weight: 100;
+                    opacity: 1
+                }
+
+            }
+
+            textarea {
+                height: 180px;
+                resize: none;
+            }
+            span {
+                position: absolute;
+                right: 5px;
+                bottom: 5px;
+                font-family: $montserrat;
+                font-style: italic;
+                color: $error;
+                font-size: .66em;
+            }
+        }
+
+
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.25em;
+            padding: 0 .75em;
+            font-weight: 400;
+            font-style: italic;           
+            color: $white;
+            display: inline-block;
+            transition-duration: 0.5s;
+            text-decoration: none;
+            position: relative;
+            font-family: $montserrat;                                  
+            
+
+
+            &:after,
+            &:before {
+                content: "";
+                height: 1px;
+                width: 100%;
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translateX(-50%);
+                transition-duration: 0.5s;
+                background: $blue;
+            }
+
+            &:after {
+                width: 0;
+                background: $blue;
+            }
+
+            &.active,
+            &:hover {
+                color: $white;
+            }
+
+            &.active:before,
+            &:hover:before {
+                width: 0;
+            }
+
+            &.active:after,
+            &:hover:after {
+                width: 100%
+            }
+
+
+        }
+    }
+}

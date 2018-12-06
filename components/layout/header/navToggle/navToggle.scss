@@ -1,0 +1,45 @@
+@import '../../../../style/variables';
+
+.navBtn {
+    margin-top: 3px;
+    cursor: pointer;
+    position: relative;
+    z-index: 500;
+
+    span {
+        position: relative;
+        display: block;
+        background: $white;
+        height: 2px;
+        width: 20px;
+        margin:0 auto 4px;
+        transition: all .5s ease-in-out;       
+
+        &:nth-child(2) {
+            width: 14px; 
+        }
+    }
+
+    &.active {
+        span {
+            &:first-child {
+                top: 6px;
+                transform: rotate(45deg)
+            }
+
+            &:nth-child(2) {
+                right: -150px;                
+            }
+
+            &:nth-child(3) {
+                bottom: 6px;
+                transform: rotate(-45deg)
+            }
+        }
+
+    }
+
+    @media screen and (min-width:768px) {
+        margin-top: 6px;
+    }
+}

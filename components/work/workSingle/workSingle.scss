@@ -1,0 +1,130 @@
+@import '../../../style/variables';
+
+.WorkSingle {
+    width: 100%;
+    padding: 0 1em;
+
+    @media screen and (min-width: 530px) {
+        max-width: 50%;
+    }
+
+    @media screen and (min-width:990px) {
+        max-width: 33.33333%;
+    }
+
+    .inner {
+        border: 1px solid $dark;
+        padding: 5px;
+        text-align: center;
+        z-index: 5;
+        background: $black;
+        margin-bottom: 2em;
+
+        .imgWrapper {
+            max-height: 33vw;
+            overflow: hidden;
+
+            img {
+                position: relative;
+                transition-duration: 3s;
+
+                &:hover {
+                    transform: translateY(calc(-100% + 33vw));
+                }
+            }
+        }
+
+        .link {
+            font-weight: 400;
+            font-style: italic;
+            font-size: 1em;
+            color: $dark;
+            display: inline-block;           
+            transition-duration: 0.5s;
+            text-decoration: none;
+            position: relative;
+            font-family: $montserrat;
+            background: $black;
+            top: 13px;
+            padding: 0 2em;
+            transition-duration: .5s;
+
+
+            &:after,
+            &:before {
+                content: "";
+                height: 1px;
+                width: calc(100% - 2em);
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translateX(-50%);
+                transition-duration: 0.5s;
+                background: $dark;
+            }
+
+            &:after {
+                width: 0;
+                background: $blue;
+            }
+
+            &.active,
+            &:hover {
+                color: $white;
+            }
+
+            &.active:before,
+            &:hover:before {
+                width: 0;
+            }
+
+            &.active:after,
+            &:hover:after {
+                width: calc(100% - 2em)
+            }
+
+        }
+
+        &:hover {
+            .link {
+                color: $white;
+
+                &:before {
+                    width: 0;
+                }
+
+                &:after {
+                    width: calc(100% - 2em);
+                }
+            }
+        }
+
+    }
+
+    @media (min-width:530px) {
+        .inner {
+            .imgWrapper {
+                max-height: 18.76vw;
+                img {
+                    &:hover {
+                        transform: translateY(calc(-100% + 18.759999999999998vw))
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width:990px) {
+        .inner {
+            .imgWrapper {
+                max-height: 9.87368vw;
+
+                img {
+                    &:hover {
+                         transform: translateY(calc(-100% + 9.873684210526315vw))
+                    }
+                }
+            }
+        }
+    }
+
+}
